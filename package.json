@@ -1,0 +1,24 @@
+{
+  "name": "book-catalog",
+  "version": "1.0.0",
+  "description": "A book catalog project developed with Node.js, TypeScript, and Serverless for learning purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EllenCavalcanteBrito/book-catalog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EllenCavalcanteBrito/book-catalog/issues"
+  },
+  "homepage": "https://github.com/EllenCavalcanteBrito/book-catalog#readme",
+  "devDependencies": {
+    "serverless-offline": "^14.8.3",
+    "serverless-plugin-typescript": "^2.1.5"
+  }
+}
