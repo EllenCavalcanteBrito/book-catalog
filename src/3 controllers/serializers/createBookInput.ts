@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateBookInput {
   @IsString()
