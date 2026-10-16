@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/EllenCavalcanteBrito/book-catalog#readme",
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
     "serverless-offline": "^14.8.3",
     "serverless-plugin-typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1"
   }
 }

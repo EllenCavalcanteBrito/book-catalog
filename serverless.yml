@@ -1,0 +1,13 @@
+service: book-catalog
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline  
+
+functions:
+  ${file(src/4 framework/functions/handlers.yml)}

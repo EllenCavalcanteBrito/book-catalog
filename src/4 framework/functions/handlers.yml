@@ -1,0 +1,31 @@
+createBook:
+  handler: src/4 framework/functions/createBook.handler
+  events:
+    - http:
+        path: /books
+        method: post
+        description: add a new book to the catalog
+# getBooks:
+#     handler: handler.getBooks
+#     events:
+#       - http:
+#           path: books
+#           method: get          
+#   getBook:
+#     handler: handler.getBook
+#     events:
+#       - http:
+#           path: books/{id}
+#           method: get
+#   putBook:
+#     handler: handler.putBook
+#     events:
+#       - http:
+#           path: books/{id}
+#           method: put
+#   deleteBook:
+#     handler: handler.deleteBook
+#     events:
+#       - http:
+#           path: books/{id}
+#           method: delete
