@@ -1,7 +1,8 @@
 import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 import Container from 'typedi';
-import { CreateBookInput } from '../../3 controllers/serializers/createBookInput.js';
+import { CreateBookInput } from '../../3 controllers/dto/createBookInput.js';
 import { CreateBookController } from '../../3 controllers/createBookController.js';
+
 
 async function eventInputAdapter(
   event: APIGatewayEvent

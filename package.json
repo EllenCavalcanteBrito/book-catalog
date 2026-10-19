@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A book catalog project developed with Node.js, TypeScript, and Serverless for learning purposes.",
+  "engines": {
+  "node": ">=22.0.0"
+},
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
