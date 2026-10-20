@@ -1,5 +1,5 @@
 import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
-import Container from 'typedi';
+import { Container } from 'typedi';
 import { CreateBookInput } from '../../3 controllers/dto/createBookInput.js';
 import { CreateBookController } from '../../3 controllers/createBookController.js';
 
@@ -16,5 +16,10 @@ export const handler = async (
 ): Promise<APIGatewayProxyResult> => {
   const input = await eventInputAdapter(event);
 
-  return await Container.get(CreateBookController).run(input); //ajustar controller
-};
+  const result = await Container.get(CreateBookController).run(input);
+
+  return {
+    statusCode: result.statusCode,
+    body: JSON.stringify(result.body),
+  }
+}
