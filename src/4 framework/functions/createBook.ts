@@ -2,6 +2,7 @@ import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { Container } from 'typedi';
 import { CreateBookInput } from '../../3 controllers/dto/createBookInput.js';
 import { CreateBookController } from '../../3 controllers/createBookController.js';
+import 'reflect-metadata';
 
 
 async function eventInputAdapter(

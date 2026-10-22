@@ -1,5 +1,8 @@
 service: book-catalog
 
+build:
+  esbuild: false
+
 provider:
   name: aws
   runtime: nodejs22.x

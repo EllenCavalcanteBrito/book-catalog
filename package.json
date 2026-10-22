@@ -9,7 +9,9 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "repository": {
     "type": "git",
@@ -23,12 +25,18 @@
   },
   "homepage": "https://github.com/EllenCavalcanteBrito/book-catalog#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/aws-lambda": "^8.10.164",
     "@types/express": "^5.0.6",
     "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
     "prettier": "^3.9.10",
     "serverless-offline": "^14.8.3",
-    "serverless-plugin-typescript": "^2.1.5"
+    "serverless-plugin-typescript": "^2.1.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.72.0"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",

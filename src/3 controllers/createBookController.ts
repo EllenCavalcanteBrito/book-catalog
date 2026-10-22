@@ -15,9 +15,9 @@ export class CreateBookController {
         statusCode: 201
       };
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       return {
-        body: { error: error.message },
+        body: { error: error instanceof Error ? error.message : String(error) },
         statusCode: 400,
       };
     }
