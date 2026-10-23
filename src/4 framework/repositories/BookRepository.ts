@@ -1,6 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import { IBookRepository } from '../../1 domain/interface/IBookRepository.js';
 import { Book } from '../../1 domain/entities/Book.js';
+import { Service } from 'typedi';
+
+@Service()
 
 export class BookRepository implements IBookRepository {
   private books: Book[] = [];
