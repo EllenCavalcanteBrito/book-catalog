@@ -1,11 +1,11 @@
 import { Service } from 'typedi';
 import { Book } from '../1 domain/entities/Book.js';
 import { PutBookInput } from '../3 controllers/dto/putBookInput.js';
-import { IBookRepository } from '../1 domain/interface/IBookRepository.js';
+import { BookRepository } from '../4 framework/repositories/BookRepository.js';
 
 @Service()
 export class PutBookUseCase {
-  constructor(private readonly bookRepository: IBookRepository) {}
+  constructor(private readonly bookRepository: BookRepository) {}
 
   async execute(input: PutBookInput): Promise<Book> {
     const updatedBook = await this.bookRepository.update({

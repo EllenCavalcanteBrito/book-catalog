@@ -1,10 +1,10 @@
 import { Service } from 'typedi';
 import { DeleteBookInput } from '../3 controllers/dto/deleteBookInput.js';
-import { IBookRepository } from '../1 domain/interface/IBookRepository.js';
+import { BookRepository } from '../4 framework/repositories/BookRepository.js';
 
 @Service()
 export class DeleteBookUseCase {
-  constructor(private readonly bookRepository: IBookRepository) {}
+  constructor(private readonly bookRepository: BookRepository) {}
 
   async execute(input: DeleteBookInput): Promise<void> {
     const book = await this.bookRepository.findById(input.id);

@@ -1,11 +1,11 @@
 import { Service } from 'typedi';
 import { GetBookInput } from '../3 controllers/dto/getBookInput.js';
 import { GetBookOutput } from '../3 controllers/dto/getBookOutput.js';
-import { IBookRepository } from '../1 domain/interface/IBookRepository.js';
+import { BookRepository } from '../4 framework/repositories/BookRepository.js';
 
 @Service()
 export class GetBookUseCase {
-  constructor(private readonly bookRepository: IBookRepository) {}
+  constructor(private readonly bookRepository: BookRepository) {}
 
   async execute(input: GetBookInput): Promise<GetBookOutput> {
     const book = await this.bookRepository.findById(input.id);
