@@ -6,7 +6,7 @@ import { Service } from 'typedi';
 @Service()
 
 export class BookRepository implements IBookRepository {
-  private books: Book[] = [];
+  private static books: Book[] = [];
 
   public async create(
     title: string,
@@ -20,7 +20,36 @@ export class BookRepository implements IBookRepository {
       pages,
     };
 
-    this.books.push(newBook);
+    BookRepository.books.push(newBook);
     return newBook;
+  }
+
+  public async findById(id: string): Promise<Book | null> {
+    return BookRepository.books.find((book: Book) => book.id === id) ?? null;
+  }
+
+  public async findAll(): Promise<Book[]> {
+    return BookRepository.books;
+  }
+
+  public async update(book: Book): Promise<Book | null> {
+    const bookIndex = BookRepository.books.findIndex(
+      (existingBook: Book) => existingBook.id === book.id
+    );
+
+    if (bookIndex === -1) {
+      return null;
+    }
+
+    BookRepository.books[bookIndex] = book;
+    return book;
+  }
+
+  public async delete(id: string): Promise<void> {
+    const bookIndex = BookRepository.books.findIndex((book: Book) => book.id === id);
+
+    if (bookIndex !== -1) {
+      BookRepository.books.splice(bookIndex, 1);
+    }
   }
 }

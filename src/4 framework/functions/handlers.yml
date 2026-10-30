@@ -5,27 +5,31 @@ createBook:
         path: /books
         method: post
         description: add a new book to the catalog
-# getBooks:
-#     handler: handler.getBooks
-#     events:
-#       - http:
-#           path: books
-#           method: get          
-#   getBook:
-#     handler: handler.getBook
-#     events:
-#       - http:
-#           path: books/{id}
-#           method: get
-#   putBook:
-#     handler: handler.putBook
-#     events:
-#       - http:
-#           path: books/{id}
-#           method: put
-#   deleteBook:
-#     handler: handler.deleteBook
-#     events:
-#       - http:
-#           path: books/{id}
-#           method: delete
+getBooks:
+  handler: src/4 framework/functions/getBooks.handler
+  events:
+    - http:
+        path: /books
+        method: get
+        description: retrieve all books from the catalog
+getBook:
+  handler: src/4 framework/functions/getBook.handler
+  events:
+    - http:
+        path: /books/{id}
+        method: get
+        description: retrieve a book from the catalog
+putBook:
+  handler: src/4 framework/functions/putBook.handler
+  events:
+    - http:
+        path: /books/{id}
+        method: put
+        description: update a book in the catalog
+deleteBook:
+  handler: src/4 framework/functions/deleteBook.handler
+  events:
+    - http:
+        path: /books/{id}
+        method: delete
+        description: delete a book from the catalog
