@@ -6,7 +6,7 @@ build:
 provider:
   name: aws
   runtime: nodejs22.x
-  region: us-east-1
+  region: us-east-2
 
 plugins:
   - serverless-plugin-typescript

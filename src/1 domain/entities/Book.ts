@@ -1,6 +1,8 @@
-export interface Book {
-  id: string;
-  title: string;
-  author: string;
-  pages: number;
+export class Book {
+  constructor(
+    public readonly id: string,
+    public readonly title: string,
+    public readonly author: string,
+    public readonly pages: number
+  ) {}
 }
