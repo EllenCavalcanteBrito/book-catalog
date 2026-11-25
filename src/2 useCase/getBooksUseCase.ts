@@ -5,10 +5,11 @@ import { IBookRepository } from '../1 domain/interface/IBookRepository.js';
 @Service()
 export class GetBooksUseCase {
   constructor(
-    @Inject('BookRepositoryToken') private readonly bookRepository: IBookRepository
+    @Inject('DynamoBookRepositoryToken')
+    private readonly dynamoBookRepository: IBookRepository
   ) {}
 
   async execute(): Promise<GetBooksOutput> {
-    return await this.bookRepository.findAll();
+    return await this.dynamoBookRepository.findAll();
   }
 }

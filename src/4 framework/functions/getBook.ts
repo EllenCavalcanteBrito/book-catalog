@@ -3,6 +3,9 @@ import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { Container } from 'typedi';
 import { GetBookInput } from '../../3 controllers/dto/getBookInput.js';
 import { GetBookController } from '../../3 controllers/getBookController.js';
+import { DynamoBookRepository } from '../repositories/DynamoBookRepository.js';
+
+Container.set('DynamoBookRepositoryToken', new DynamoBookRepository());
 
 async function eventInputAdapter(
   event: APIGatewayEvent

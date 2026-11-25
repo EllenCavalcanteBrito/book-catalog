@@ -2,9 +2,9 @@ import 'reflect-metadata';
 import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { Container } from 'typedi';
 import { GetBooksController } from '../../3 controllers/getBooksController.js';
-import { ExternalBookRepository } from '../repositories/ExternalBookRepository.js';
+import { DynamoBookRepository } from '../repositories/DynamoBookRepository.js';
 
-Container.set('BookRepositoryToken', new ExternalBookRepository());
+Container.set('DynamoBookRepositoryToken', new DynamoBookRepository());
 
 export const handler = async (
   _event: APIGatewayEvent

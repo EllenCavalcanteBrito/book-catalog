@@ -1,35 +1,36 @@
 createBook:
+  description: add a new book to the catalog
   handler: src/4 framework/functions/createBook.handler
   events:
     - http:
         path: /books
         method: post
-        description: add a new book to the catalog
 getBooks:
+  description: retrieve all books from the catalog
   handler: src/4 framework/functions/getBooks.handler
   events:
     - http:
         path: /books
         method: get
-        description: retrieve all books from the catalog
 getBook:
+  description: retrieve a book from the catalog
   handler: src/4 framework/functions/getBook.handler
   events:
     - http:
         path: /books/{id}
         method: get
-        description: retrieve a book from the catalog
 putBook:
+  description: update a book in the catalog
   handler: src/4 framework/functions/putBook.handler
   events:
     - http:
         path: /books/{id}
         method: put
-        description: update a book in the catalog
 deleteBook:
+  description: delete a book from the catalog
   handler: src/4 framework/functions/deleteBook.handler
   events:
     - http:
         path: /books/{id}
         method: delete
-        description: delete a book from the catalog
+        
